@@ -1,0 +1,18 @@
+{
+    "name": "cookies-legal-element",
+    "version": "0.0.0",
+    "description": "An element to add that pesky "This site uses cookies info"",
+    "license": "MIT",
+    "main": "cookies-legal-element.html",
+    "keywords": [
+        "polymer",
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "bower_components"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^0.9.0"
+    }
+}
