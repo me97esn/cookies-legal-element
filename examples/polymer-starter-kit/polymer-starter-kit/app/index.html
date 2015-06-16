@@ -52,8 +52,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
-  <!-- endreplace-->  <link rel="import" href="bower_components/cookies-legal-element/cookies-legal-element.html">
-  <!-- endreplace-->  <link rel="import" href="bower_components/cookies-legal-element/language-select.html">
+  <!-- endreplace-->  
+  <link rel="import" href="bower_components/cookies-legal-element/cookies-legal-element.html">
+  <link rel="import" href="bower_components/cookies-legal-element/language-select.html">
+  <link rel="import" href="bower_components/cookies-legal-element/language-select-lang.html">
 
 </head>
 
@@ -65,7 +67,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <cookies-legal-element>
       <language-select default-lang="sv-SE">
-
+        <language-select-lang language="sv-SE">
+          svenska
+        </language-select-option>
+        <language-select-lang language="en-US">
+          English
+        </language-select-option>
       </language-select>
     </cookies-legal-element>
 
