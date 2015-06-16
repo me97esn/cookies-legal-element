@@ -3,7 +3,18 @@
 
 <!-- Defines element markup -->
 <dom-module id="cookies-legal-element">
-    <template></template>
+    <template>
+        <div>{{item.name}}</div>
+        <content></content>
+        <template is="dom-repeat" items="{{people}}">
+            <div>{{item.name}}</div>
+            <content></content>
+        </template>
+        <template is="dom-if" if="{{msg}}"> 
+            <div>visas</div>
+            <div>{{msg}}</div>
+        </template>
+    </template>
 </dom-module>
 
 <!-- Registers custom element -->
@@ -12,10 +23,17 @@ Polymer({
     is: 'cookies-legal-element',
 
     // Fires when an instance of the element is created
-    created: function() {},
-
+    created: function() {
+       
+    },
+    say:function  (argument) {
+        debugger
+        console.log('hello', argument);
+    },
     // Fires when the local DOM has been fully prepared
-    ready: function() {},
+    ready: function() {
+        this.people = [{name:'Emil'},{name:'Eric'}]
+    },
 
     // Fires when the element was inserted into the document
     attached: function() {},
@@ -24,6 +42,7 @@ Polymer({
     detached: function() {},
 
     // Fires when an attribute was added, removed, or updated
-    attributeChanged: function(attr, oldVal, newVal) {}
+    attributeChanged: function(attr, oldVal, newVal) {
+    }
 });
 </script>
