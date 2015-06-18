@@ -1,14 +1,18 @@
 <!-- Imports polymer -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
 
 <!-- Defines element markup -->
 <dom-module id="cookies-legal-element">
     <template>
-        <div>{{item.name}}</div>
+        <div class="">{{item.name}}</div>
+        <paper-dialog heading="Cookies" opened="true">
+            <content></content>
+        </paper-dialog>
         <content></content>
         <template is="dom-repeat" items="{{people}}">
             <div>{{item.name}}</div>
-            <content></content>
+            
         </template>
         <template is="dom-if" if="{{msg}}"> 
             <div>visas</div>

@@ -56,7 +56,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="bower_components/cookies-legal-element/cookies-legal-element.html">
   <link rel="import" href="bower_components/cookies-legal-element/language-select.html">
   <link rel="import" href="bower_components/cookies-legal-element/language-select-lang.html">
-
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+     <link rel="import" href="bower_components/neon-animation/animations/scale-up-animation.html">
+    <link rel="import" href="bower_components/neon-animation/animations/fade-out-animation.html">
 </head>
 
 <body unresolved class="fullbleed layout vertical">
@@ -66,14 +68,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
     <cookies-legal-element>
-      <language-select default-lang="sv-SE">
-        <language-select-lang language="sv-SE">
-          svenska
-        </language-select-option>
-        <language-select-lang language="en-US">
-          English
-        </language-select-option>
-      </language-select>
+      <h2>This site uses cookies</h2>
+      <div>
+          Yes it does.
+      </div>
     </cookies-legal-element>
 
     </paper-drawer-panel>
