@@ -15,11 +15,18 @@
             <paper-toolbar>
               <div>
                 This site uses cookies. By using this site, you agree to our use of cookies.
-                <paper-button raised>Read more</paper-button>
+                </div>
+                <paper-button raised on-click="showReadMore">Read more</paper-button>
                 <paper-button raised on-click="confirm">Accept</paper-button>
               </div>
             </paper-toolbar>
+
           </paper-header-panel>
+          <template is="dom-if" if={{readMore}}>
+                    En cookie är en liten fil som webbplatser som du besöker skickar till din webbläsare. På så sätt kan webbplatsen komma ihåg information om ditt besök, som vilket språk du vill använda och andra inställningar. Det underlättar vid nästa besök, och webbplatsen blir mer användbar. Cookies spelar en viktig roll. Utan dem skulle du förmodligen bli frustrerad när du använder webben.
+
+Vi använder cookies för flera ändamål. Vi använder dem till exempel för att spara dina SafeSearch-inställningar, för att kunna visa mer relevanta annonser, för att räkna hur många besökare en viss sida har och för att hjälpa dig att logga in på våra tjänster. Vi använder även cookies för att skydda dina data.
+      </template>
       </template>
     </template>
 </dom-module>
@@ -32,12 +39,14 @@ Polymer({
     behaviors: [
       //Polymer.PaperDialogBehavior
     ],
-    confirm: function function_name (argument) {
+    confirm: function () {
         localStorage.acceptCookies = true;
         this.show = false;
         console.log('accept cookies');
     },
-
+    showReadMore: function () {
+        this.readMore = true;
+    },
     // Fires when an instance of the element is created
     created: function() {
 
