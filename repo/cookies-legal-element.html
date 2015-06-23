@@ -1,23 +1,27 @@
 <!-- Imports polymer -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-dialog-behavior/paper-dialog-behavior.html">
+
 
 <!-- Defines element markup -->
 <dom-module id="cookies-legal-element">
     <template>
-        <div class="">{{item.name}}</div>
-        <paper-dialog heading="Cookies" opened="true">
+        <paper-dialog opened="true">
             <content></content>
+
+            <paper-button>Read more</paper-button>
+            <paper-button dialog-confirm on-click="confirm">Accept</paper-button>
         </paper-dialog>
-        <content></content>
-        <template is="dom-repeat" items="{{people}}">
+        <!-- template is="dom-repeat" items="{{people}}">
             <div>{{item.name}}</div>
             
         </template>
         <template is="dom-if" if="{{msg}}"> 
             <div>visas</div>
             <div>{{msg}}</div>
-        </template>
+        </template-->
     </template>
 </dom-module>
 
@@ -26,13 +30,16 @@
 Polymer({
     is: 'cookies-legal-element',
 
+    behaviors: [
+      //Polymer.PaperDialogBehavior
+    ],
+    confirm: function function_name (argument) {
+        localStorage.acceptCookies = true;
+    },
+
     // Fires when an instance of the element is created
     created: function() {
        
-    },
-    say:function  (argument) {
-        debugger
-        console.log('hello', argument);
     },
     // Fires when the local DOM has been fully prepared
     ready: function() {
