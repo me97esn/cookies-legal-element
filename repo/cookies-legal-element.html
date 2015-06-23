@@ -34,6 +34,7 @@ Polymer({
     ],
     confirm: function function_name (argument) {
         localStorage.acceptCookies = true;
+        this.show = false;
         console.log('accept cookies');
     },
 
@@ -44,6 +45,10 @@ Polymer({
     },
     // Fires when the local DOM has been fully prepared
     ready: function() {
+
+        // TODO: remove this!
+        delete localStorage.acceptCookies;
+
         if(!localStorage.acceptCookies){
             this.show = true;
         }
