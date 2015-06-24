@@ -29,7 +29,7 @@
                         <paper-material>
                         <span><strong>Credit</strong>
 <p>
-This document was created using a Contractology template available at http://www.freenetlaw.com.
+This document was created using a Contractology template available at <a href="http://www.freenetlaw.com">http://www.freenetlaw.com</a>.
 </p>
 <strong>About cookies</strong>
 <p>
@@ -98,10 +98,10 @@ Blocking cookies will have a negative impact upon the usability of some websites
 <script>
 Polymer({
     is: 'cookies-legal-element',
-
-    behaviors: [
-      //Polymer.PaperDialogBehavior
-    ],
+    properties: {
+        owner:'[NAME]'
+    }
+    ,
     confirm: function () {
         localStorage.acceptCookies = true;
         this.show = false;
