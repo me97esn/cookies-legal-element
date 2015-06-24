@@ -6,7 +6,9 @@
   "main": "cookies-legal-element.html",
   "keywords": [
     "polymer",
-    "web-components"
+    "web-components",
+    "cookies",
+    "legal"
   ],
   "ignore": [
     "**/.*",
