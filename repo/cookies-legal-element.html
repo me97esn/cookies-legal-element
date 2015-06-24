@@ -10,29 +10,72 @@
 <!-- Defines element markup -->
 <dom-module id="cookies-legal-element">
     <template>
-    <template is="dom-if" if={{show}}>
-        <paper-header-panel class="flex">
-            <paper-toolbar>
-              <div>
-                This site uses cookies. By using this site, you agree to our use of cookies.
-                </div>
-                <paper-button raised on-click="confirm">Accept</paper-button>
-                <template is="dom-if" if={{showButton}}>
-                    <paper-button raised on-click="showReadMore">Read more</paper-button>
-                </template>
-                
-              </div>
-            </paper-toolbar>
+        <template is="dom-if" if={{show}}>
+                <paper-header-panel class="flex">
+                    <paper-toolbar>
+                    <div>
+                        This site uses cookies. By using this site, you agree to our use of cookies.
+                        </div>
+                        <paper-button raised on-click="confirm">Accept</paper-button>
+                        <template is="dom-if" if={{showButton}}>
+                            <paper-button raised on-click="showReadMore">Read more</paper-button>
+                        </template>
+                        
+                      </div>
+                    </paper-toolbar>
 
-          </paper-header-panel>
-          <template is="dom-if" if={{readMore}}>
-                    <paper-material>
-                    En cookie är en liten fil som webbplatser som du besöker skickar till din webbläsare. På så sätt kan webbplatsen komma ihåg information om ditt besök, som vilket språk du vill använda och andra inställningar. Det underlättar vid nästa besök, och webbplatsen blir mer användbar. Cookies spelar en viktig roll. Utan dem skulle du förmodligen bli frustrerad när du använder webben.
+                </paper-header-panel>
+                <template is="dom-if" if={{readMore}}>
+                        <paper-material>
+                        <span>Credit
 
-Vi använder cookies för flera ändamål. Vi använder dem till exempel för att spara dina SafeSearch-inställningar, för att kunna visa mer relevanta annonser, för att räkna hur många besökare en viss sida har och för att hjälpa dig att logga in på våra tjänster. Vi använder även cookies för att skydda dina data.
-</paper-material>
-      </template>
-      </template>
+This document was created using a Contractology template available at http://www.freenetlaw.com.
+
+About cookies
+
+This website uses cookies.  By using this website and agreeing to this policy, you consent to [NAME]'s use of cookies in accordance with the terms of this policy.
+
+Cookies are files sent by web servers to web browsers, and stored by the web browsers. 
+
+The information is then sent back to the server each time the browser requests a page from the server.  This enables a web server to identify and track web browsers. 
+
+There are two main kinds of cookies: session cookies and persistent cookies.  Session cookies are deleted from your computer when you close your browser, whereas persistent cookies remain stored on your computer until deleted, or until they reach their expiry date.
+
+Cookies on our website
+
+[NAME] uses the following cookies on this website, for the following purposes:
+
+[INSERT DETAILS]
+[INSERT DETAILS]
+[INSERT DETAILS]
+
+Google cookies
+
+[[NAME] uses Google Analytics to analyse the use of this website.  Google Analytics generates statistical and other information about website use by means of cookies, which are stored on users' computers.  The information generated relating to our website is used to create reports about the use of the website. Google will store and use this information.  Google's privacy policy is available at: http://www.google.com/privacypolicy.html.]
+
+[[NAME] publishes Google Adsense interest-based advertisements on this website.  These are tailored by Google to reflect your interests.  To determine your interests, Google will track your behaviour across the web using cookies.  You can view, delete or add interest categories associated with your browser using Google's Ads Preference Manager, available at: http://www.google.com/ads/preferences/.  You can opt-out of the Adsense partner network cookie at: http://www.google.com/privacy_ads.html.  However, this opt-out mechanism uses a cookie, and if you clear the cookies from your browser your opt-out will not be maintained. To ensure that an opt-out is maintained in respect of a particular browser, you should use the Google browser plug-in available at: http://www.google.com/ads/preferences/plugin.]
+
+[Other] third party cookies
+
+When you use this website, you may also be sent the following third party cookies, which may be used for the following purposes:
+
+[INSERT DETAILS]
+[INSERT DETAILS]
+[INSERT DETAILS]
+
+Refusing cookies
+
+Most browsers allow you to refuse to accept cookies.  
+
+In Internet Explorer, you can refuse all cookies by clicking “Tools”, “Internet Options”, “Privacy”, and selecting “Block all cookies” using the sliding selector.  
+
+In Firefox, you can adjust your cookies settings by clicking “Tools”, “Options” and “Privacy”.
+
+Blocking cookies will have a negative impact upon the usability of some websites.
+                        </span>
+                    </paper-material>
+            </template>
+        </template>
     </template>
 </dom-module>
 
@@ -60,7 +103,7 @@ Polymer({
     },
     // Fires when the local DOM has been fully prepared
     ready: function() {
-
+        
         // TODO: remove this!
         delete localStorage.acceptCookies;
         
