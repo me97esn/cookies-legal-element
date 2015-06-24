@@ -1,0 +1,157 @@
+<!-- Imports polymer -->
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../paper-header-panel/paper-header-panel.html">
+<link rel="import" type="css" href="cookies-legal.css">
+
+<!-- 
+Example:
+<cookies-legal owner="Emil Stenberg">
+  <ul>
+    <li>Session cookie - handles login</li>
+    <li>persistent cookie - stores user data</li>
+  </ul>
+</cookies-legal>
+ -->
+<dom-module id="cookies-legal">
+    <template>
+        <template is="dom-if" if={{show}}>
+                <paper-header-panel class="flex">
+                    <paper-toolbar class="medium-tall">
+                    <div class="top">
+                        This site uses cookies. By using it, you agree to our use of cookies.
+                        </div>
+                        <div class="bottom">
+                            <paper-button raised on-click="confirm">Accept</paper-button>
+
+                            <template is="dom-if" if={{showButton}}>
+                                <paper-button raised on-click="showReadMore">Read more</paper-button>
+                            </template>
+                            <template is="dom-if" if={{!showButton}}>
+                                <paper-button raised on-click="showReadLess">Read less</paper-button>
+                            </template>    
+                        </div>
+                      </div>
+                    </paper-toolbar>
+
+                </paper-header-panel>
+                <template is="dom-if" if={{readMore}}>
+                        <paper-material>
+                        <span><strong>Credit</strong>
+<p>
+This document was created using a Contractology template available at <a href="http://www.freenetlaw.com">http://www.freenetlaw.com</a>.
+</p>
+<strong>About cookies</strong>
+<p>
+This website uses cookies.  By using this website and agreeing to this policy, you consent to <span>{{owner}}</span>'s use of cookies in accordance with the terms of this policy.
+</p>
+<p>
+Cookies are files sent by web servers to web browsers, and stored by the web browsers. 
+</p>
+<p>
+The information is then sent back to the server each time the browser requests a page from the server.  This enables a web server to identify and track web browsers. 
+</p>
+<p>
+There are two main kinds of cookies: session cookies and persistent cookies.  Session cookies are deleted from your computer when you close your browser, whereas persistent cookies remain stored on your computer until deleted, or until they reach their expiry date.
+</p>
+<p>
+<strong>
+Cookies on our website
+</strong>
+<p>
+<span>{{owner}}</span> uses the following cookies on this website, for the following purposes:
+
+<content></content>
+</p>
+<strong>
+Google cookies
+</strong>
+<p>
+<span>{{owner}}</span> uses Google Analytics to analyse the use of this website.  Google Analytics generates statistical and other information about website use by means of cookies, which are stored on users' computers.  The information generated relating to our website is used to create reports about the use of the website. Google will store and use this information.  Google's privacy policy is available at: http://www.google.com/privacypolicy.html.
+</p>
+<p>
+<span>{{owner}}</span> publishes Google Adsense interest-based advertisements on this website.  These are tailored by Google to reflect your interests.  To determine your interests, Google will track your behaviour across the web using cookies.  You can view, delete or add interest categories associated with your browser using Google's Ads Preference Manager, available at: http://www.google.com/ads/preferences/.  You can opt-out of the Adsense partner network cookie at: http://www.google.com/privacy_ads.html.  However, this opt-out mechanism uses a cookie, and if you clear the cookies from your browser your opt-out will not be maintained. To ensure that an opt-out is maintained in respect of a particular browser, you should use the Google browser plug-in available at: http://www.google.com/ads/preferences/plugin.
+</p>
+
+<strong>Third party cookies</strong>
+<p>
+When you use this website, advertisers might send third party cookies.
+</p>
+<strong>
+Refusing cookies
+</strong>
+<p>
+Most browsers allow you to refuse to accept cookies.  
+</p>
+<p>
+In Internet Explorer, you can refuse all cookies by clicking “Tools”, “Internet Options”, “Privacy”, and selecting “Block all cookies” using the sliding selector.  
+</p>
+<p>
+In Firefox, you can adjust your cookies settings by clicking “Tools”, “Options” and “Privacy”.
+</p>
+<p>
+Blocking cookies will have a negative impact upon the usability of some websites.
+</p>
+
+                        </span>
+                    </paper-material>
+            </template>
+        </template>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+Polymer({
+    is: 'cookies-legal',
+    properties: {
+        owner:'[NAME]'
+    }
+    ,
+    confirm: function () {
+        localStorage.acceptCookies = true;
+        this.show = false;
+        console.log('accept cookies');
+    },
+    showReadLess: function  () {
+        this.showButton=true;
+        this.readMore = false;
+    },
+    showReadMore: function () {
+        this.showButton=false;
+        this.readMore = true;
+    },
+    // Fires when an instance of the element is created
+    created: function() {
+
+       
+    },
+    // Fires when the local DOM has been fully prepared
+    ready: function() {
+        
+        // TODO: remove this!
+        //delete localStorage.acceptCookies;
+        //this.readMore = true;
+        
+
+
+        this.showButton=true;
+
+        if(!localStorage.acceptCookies){
+            this.show = true;
+        }
+    },
+
+    // Fires when the element was inserted into the document
+    attached: function() {},
+
+    // Fires when the element was removed from the document
+    detached: function() {},
+
+    // Fires when an attribute was added, removed, or updated
+    attributeChanged: function(attr, oldVal, newVal) {
+    }
+});
+</script>
