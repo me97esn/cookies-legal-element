@@ -1,9 +1,9 @@
 {
-  "name": "cookies-legal-element",
+  "name": "cookies-legal",
   "version": "0.0.0",
   "description": "An element to add that pesky 'This site uses cookies...' legal notice",
   "license": "MIT",
-  "main": "cookies-legal-element.html",
+  "main": "cookies-legal.html",
   "keywords": [
     "polymer",
     "web-components",
