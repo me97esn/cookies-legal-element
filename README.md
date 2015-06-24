@@ -1,20 +1,16 @@
-# &lt;cookies-legal-element&gt;
+# &lt;cookies-legal&gt;
 
 > An element to add that pesky "This site uses cookies info"
-
-## Demo
-
-[Check it live!](http://me97esn.github.io/cookies-legal-element)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install cookies-legal-element --save
+$ bower install cookies-legal --save
 ```
 
-Or [download as ZIP](https://github.com/me97esn/cookies-legal-element/archive/master.zip).
+Or [download as ZIP](https://github.com/me97esn/cookies-legal/archive/master.zip).
 
 ## Usage
 
@@ -27,13 +23,13 @@ Or [download as ZIP](https://github.com/me97esn/cookies-legal-element/archive/ma
 2. Import custom element:
 
     ```html
-    <link rel="import" href="bower_components/cookies-legal-element/cookies-legal-element.html">
+    <link rel="import" href="bower_components/cookies-legal/cookies-legal.html">
     ```
 
 3. Start using it!
 
     ```html
-    <cookies-legal-element></cookies-legal-element>
+    <cookies-legal></cookies-legal>
     ```
 
 ## Options
@@ -78,7 +74,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/me97esn/cookies-legal-element/releases).
+For detailed changelog, check [Releases](https://github.com/me97esn/cookies-legal/releases).
 
 ## License
 
