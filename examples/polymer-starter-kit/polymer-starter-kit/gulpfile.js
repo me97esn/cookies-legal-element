@@ -201,7 +201,7 @@ gulp.task('serve', ['styles', 'elements', 'images'], function () {
     }
   });
 
-  gulp.watch(['bower_components/cookies-legal-element/**/*.*'], reload);
+  gulp.watch(['bower_components/cookies-legal/**/*.*'], reload);
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.css'], ['elements', reload]);

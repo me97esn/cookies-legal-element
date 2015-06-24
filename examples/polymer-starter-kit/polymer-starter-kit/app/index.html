@@ -53,9 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->  
-  <link rel="import" href="bower_components/cookies-legal-element/cookies-legal-element.html">
-  <link rel="import" href="bower_components/cookies-legal-element/language-select.html">
-  <link rel="import" href="bower_components/cookies-legal-element/language-select-lang.html">
+  <link rel="import" href="bower_components/cookies-legal/cookies-legal.html">
 
   <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
 
@@ -68,12 +66,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
        
   <template is="dom-bind" id="app">
-    <cookies-legal-element owner="Emil Stenberg">
+    <cookies-legal owner="Emil Stenberg">
       <ul>
         <li>Session cookie - handles login</li>
         <li>persistent cookie - stores user data</li>
       </ul>
-    </cookies-legal-element>
+    </cookies-legal>
 
     </paper-drawer-panel>
 
