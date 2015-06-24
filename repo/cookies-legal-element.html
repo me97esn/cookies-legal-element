@@ -10,25 +10,30 @@
 <!-- 
 Example:
 <cookies-legal-element owner="Emil Stenberg">
-      <ul>
-        <li>Session cookie - handles login</li>
-        <li>persistent cookie - stores user data</li>
-      </ul>
-    </cookies-legal-element>
+  <ul>
+    <li>Session cookie - handles login</li>
+    <li>persistent cookie - stores user data</li>
+  </ul>
+</cookies-legal-element>
  -->
 <dom-module id="cookies-legal-element">
     <template>
         <template is="dom-if" if={{show}}>
                 <paper-header-panel class="flex">
-                    <paper-toolbar>
-                    <div>
-                        This site uses cookies. By using this site, you agree to our use of cookies.
+                    <paper-toolbar class="medium-tall">
+                    <div class="top">
+                        This site uses cookies. By using it, you agree to our use of cookies.
                         </div>
-                        <paper-button raised on-click="confirm">Accept</paper-button>
-                        <template is="dom-if" if={{showButton}}>
-                            <paper-button raised on-click="showReadMore">Read more</paper-button>
-                        </template>
-                        
+                        <div class="bottom">
+                            <paper-button raised on-click="confirm">Accept</paper-button>
+
+                            <template is="dom-if" if={{showButton}}>
+                                <paper-button raised on-click="showReadMore">Read more</paper-button>
+                            </template>
+                            <template is="dom-if" if={{!showButton}}>
+                                <paper-button raised on-click="showReadLess">Read less</paper-button>
+                            </template>    
+                        </div>
                       </div>
                     </paper-toolbar>
 
@@ -111,6 +116,10 @@ Polymer({
         this.show = false;
         console.log('accept cookies');
     },
+    showReadLess: function  () {
+        this.showButton=true;
+        this.readMore = false;
+    },
     showReadMore: function () {
         this.showButton=false;
         this.readMore = true;
@@ -124,8 +133,8 @@ Polymer({
     ready: function() {
         
         // TODO: remove this!
-        delete localStorage.acceptCookies;
-        this.readMore = true;
+        //delete localStorage.acceptCookies;
+        //this.readMore = true;
         
 
 
